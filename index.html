@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachael Kathini | Quality Assurance Lead</title>
+<meta name="description" content="Quality Assurance Lead with 5+ years in test automation (Selenium, Playwright, REST Assured, k6) and CI/CD. Open to remote opportunities.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f7fa;
+    --text: #1b2430;
+    --muted: #5b6776;
+    --accent: #0f766e;
+    --accent-soft: #d9f2ee;
+    --border: #e2e7ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1720;
+      --surface: #17212d;
+      --text: #e8edf3;
+      --muted: #9aa7b6;
+      --accent: #2dd4bf;
+      --accent-soft: #12332f;
+      --border: #263341;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .brand { font-weight: 700; color: var(--text); }
+  .nav nav a { margin-left: 18px; color: var(--muted); font-size: 0.95rem; }
+  .nav nav a:hover { color: var(--accent); text-decoration: none; }
+
+  /* Hero */
+  .hero { padding: 80px 0 40px; }
+  .hero .tag {
+    display: inline-block; background: var(--accent-soft); color: var(--accent);
+    padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+  }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 18px 0 6px; }
+  .hero .role { font-size: 1.25rem; font-weight: 600; color: var(--accent); margin: 0 0 14px; }
+  .hero p.lead { font-size: 1.1rem; color: var(--muted); max-width: 680px; }
+  .btns { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 11px 22px; border-radius: 8px; font-weight: 600;
+    border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn.ghost { color: var(--accent); }
+  .btn:hover { text-decoration: none; opacity: 0.9; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; padding-bottom: 56px; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px;
+  }
+  .stat .num { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .stat .lbl { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+
+  /* Sections */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.6rem; margin: 0 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    background: var(--accent-soft); color: var(--accent);
+    padding: 3px 11px; border-radius: 999px; font-size: 0.85rem; font-weight: 500;
+  }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+  /* Achievements */
+  .achievements { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .achievements .card .big { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+  .achievements .card p { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .project { display: flex; flex-direction: column; }
+  .project p { color: var(--muted); margin: 0 0 14px; flex: 1; }
+  .project .links a { margin-right: 14px; font-weight: 600; font-size: 0.95rem; }
+
+  /* Experience */
+  .job { margin-bottom: 30px; padding-left: 18px; border-left: 3px solid var(--accent); }
+  .job h3 { margin: 0; font-size: 1.1rem; }
+  .job .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+  .job ul { margin: 0; padding-left: 18px; }
+  .job li { margin-bottom: 4px; }
+
+  /* Two-column */
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .two ul { margin: 0; padding-left: 18px; }
+  .two li { margin-bottom: 6px; }
+
+  /* Contact */
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li { margin-bottom: 8px; }
+
+  footer { text-align: center; color: var(--muted); padding: 30px 0 40px; font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    .nav nav a { margin-left: 10px; font-size: 0.8rem; }
+    .hero { padding: 56px 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Rachael Kathini</a>
+    <nav>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="wrap hero">
+    <span class="tag">Open to remote opportunities</span>
+    <h1>Rachael Kathini</h1>
+    <p class="role">Quality Assurance Lead</p>
+    <p class="lead">
+      QA professional with 5+ years in test automation and quality assurance, specialising in Selenium and
+      Playwright. I build scalable automation frameworks, integrate them into CI/CD pipelines, and lead teams
+      to ship predictable, high-quality releases. Based in Nairobi, with remote experience supporting teams in the USA.
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View my work</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="wrap stats">
+    <div class="stat"><div class="num">5+</div><div class="lbl">years in QA and test automation</div></div>
+    <div class="stat"><div class="num">180+</div><div class="lbl">automated scripts built into CI/CD</div></div>
+    <div class="stat"><div class="num">45%</div><div class="lbl">less test maintenance effort</div></div>
+    <div class="stat"><div class="num">50%</div><div class="lbl">fewer manual testing hours</div></div>
+  </div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="sub">The tools and practices I use day to day.</p>
+      <div class="skills">
+        <div class="card">
+          <h3>Test Automation</h3>
+          <div class="chips">
+            <span class="chip">Selenium</span><span class="chip">Playwright</span>
+            <span class="chip">Cypress</span><span class="chip">Appium</span>
+            <span class="chip">TestNG</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">Java</span><span class="chip">TypeScript</span>
+            <span class="chip">JavaScript</span><span class="chip">Python</span>
+            <span class="chip">SQL</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>API &amp; Performance</h3>
+          <div class="chips">
+            <span class="chip">REST Assured</span><span class="chip">Postman</span>
+            <span class="chip">k6</span><span class="chip">Performance testing</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>CI/CD &amp; Tooling</h3>
+          <div class="chips">
+            <span class="chip">GitHub Actions</span><span class="chip">GitLab CI/CD</span>
+            <span class="chip">Jenkins</span><span class="chip">Maven</span>
+            <span class="chip">Git</span><span class="chip">AWS</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>QA Practice</h3>
+          <div class="chips">
+            <span class="chip">Test strategy &amp; planning</span><span class="chip">Regression testing</span>
+            <span class="chip">Defect tracking</span><span class="chip">SDLC</span>
+            <span class="chip">Agile</span><span class="chip">OOP</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Test Management &amp; AI</h3>
+          <div class="chips">
+            <span class="chip">Jira</span><span class="chip">TestRail</span>
+            <span class="chip">PractiTest</span><span class="chip">Claude</span>
+            <span class="chip">Cursor AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="wrap">
+      <h2>Key achievements</h2>
+      <p class="sub">Measurable results from my recent roles.</p>
+      <div class="achievements">
+        <div class="card">
+          <div class="big">50%</div>
+          <h3>CI/CD integration</h3>
+          <p>Cut manual testing hours by integrating 180+ automated scripts with CI/CD.</p>
+        </div>
+        <div class="card">
+          <div class="big">30%</div>
+          <h3>Effective API testing</h3>
+          <p>Reduced critical defects through API testing strategies on backend services.</p>
+        </div>
+        <div class="card">
+          <div class="big">45%</div>
+          <h3>Scalable framework</h3>
+          <p>Improved efficiency with a modular automation framework for regression testing.</p>
+        </div>
+        <div class="card">
+          <div class="big">40%</div>
+          <h3>Performance testing</h3>
+          <p>Built performance scripts that exposed bottlenecks and cut application downtime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="sub">Sample work you can explore on GitHub.</p>
+      <div class="projects">
+
+        <div class="card project">
+          <h3>Selenium Automation Framework</h3>
+          <p>
+            Modular Java framework built with TestNG and Maven, using the Page Object Model and reusable
+            components. Runs automatically through a GitHub Actions pipeline.
+          </p>
+          <div class="chips" style="margin-bottom:14px">
+            <span class="chip">Java</span><span class="chip">Selenium</span>
+            <span class="chip">TestNG</span><span class="chip">GitHub Actions</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/selenium-java-framework">Code</a>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>Playwright + TypeScript Suite</h3>
+          <p>
+            End-to-end tests for a web application covering critical user flows, with fixtures,
+            reporting, and parallel execution.
+          </p>
+          <div class="chips" style="margin-bottom:14px">
+            <span class="chip">Playwright</span><span class="chip">TypeScript</span>
+            <span class="chip">E2E</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/playwright-ts-suite">Code</a>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>API Test Suite</h3>
+          <p>
+            REST Assured and Postman tests against a public API covering authentication, CRUD operations,
+            schema validation, and negative scenarios.
+          </p>
+          <div class="chips" style="margin-bottom:14px">
+            <span class="chip">REST Assured</span><span class="chip">Postman</span>
+            <span class="chip">Maven</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/api-test-suite">Code</a>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>Performance Testing with k6</h3>
+          <p>
+            Load and stress test scripts that simulate realistic traffic, with thresholds and
+            results that point to system bottlenecks.
+          </p>
+          <div class="chips" style="margin-bottom:14px">
+            <span class="chip">k6</span><span class="chip">JavaScript</span>
+            <span class="chip">Load testing</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/YOUR-USERNAME/k6-performance-tests">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="sub">From software test engineer to QA lead.</p>
+
+      <div class="job">
+        <h3>Quality Assurance Lead, Platcorp Group</h3>
+        <div class="meta">2025 – Present · Nairobi, Kenya</div>
+        <ul>
+          <li>Define and implement a QA strategy aligned with organisational goals to improve product quality and release predictability.</li>
+          <li>Identify automation candidates and build test automation frameworks, increasing coverage and reducing manual effort.</li>
+          <li>Design and run performance tests that identify bottlenecks and improve application stability.</li>
+          <li>Lead requirements and system design reviews to catch gaps and risks early in the SDLC.</li>
+          <li>Lead test design, execution, and reporting across functional, regression, and performance cycles.</li>
+          <li>Own defect triage and tracking, giving the team clear visibility into quality metrics.</li>
+          <li>Integrate Generative AI tools such as Claude and Cursor AI into testing workflows to cut test creation time.</li>
+          <li>Mentor junior QA team members and strengthen team capability.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Quality Assurance Consultant, Xogito Group</h3>
+        <div class="meta">2024 – 2025 · USA, Remote</div>
+        <ul>
+          <li>Architected a Selenium framework with Java, TestNG, and Maven; its modular structure and reusable components reduced test maintenance effort by 45%.</li>
+          <li>Built and integrated 180+ automated test scripts via GitHub Actions, expanding coverage of core user flows and reducing manual testing hours by 50%.</li>
+          <li>Supported regression testing by running full suites and monitoring results for consistency and reliability.</li>
+          <li>Documented and reported defects with clear reproduction steps to drive timely resolution.</li>
+          <li>Mentored junior QA engineers in technical skills and best-practice testing habits.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Quality Assurance Consultant, IOHK</h3>
+        <div class="meta">2023 – 2024 · USA, Remote</div>
+        <ul>
+          <li>Designed and executed a testing strategy for backend services and frontend interfaces, resulting in a 30% reduction in critical defects.</li>
+          <li>Built and maintained 150+ automated scripts with Playwright and TypeScript, cutting manual regression effort by 40%.</li>
+          <li>Ran manual and exploratory testing to validate functionality, usability, and stability.</li>
+          <li>Led root-cause analysis with engineering teams, driving a 25% reduction in defect recurrence.</li>
+          <li>Planned and ran performance tests simulating realistic loads to improve scalability under peak conditions.</li>
+          <li>Maintained test plans, cases, and reports for coverage, traceability, and stakeholder visibility.</li>
+          <li>Led QA planning for Agile sprints across a cross-functional team, contributing to a 35% improvement in release punctuality.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Software QA Engineer, Cellulant Corporation</h3>
+        <div class="meta">2021 – 2024 · Nairobi, Kenya</div>
+        <ul>
+          <li>Wrote test cases and scenarios from BRD and LLD documents and guided QA processes within Agile delivery teams.</li>
+          <li>Automated test cases for web, mobile, and backend applications to improve testing efficiency.</li>
+          <li>Maintained and evolved automation frameworks in line with the product roadmap.</li>
+          <li>Integrated automation scripts into GitLab CI/CD pipelines, improving release reliability.</li>
+          <li>Conducted code reviews and functional testing to uphold software quality standards.</li>
+          <li>Logged and tracked defects with development and product teams to enable root-cause analysis.</li>
+          <li>Coached junior engineers and promoted knowledge sharing across the team.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Software Test Engineer, Equity Bank Limited</h3>
+        <div class="meta">2019 – 2021 · Nairobi, Kenya</div>
+        <ul>
+          <li>Managed test planning, strategy, and automation scripting to improve testing efficiency.</li>
+          <li>Ran manual and automated testing across the development life cycle, including product verification.</li>
+          <li>Identified functional gaps and communicated findings promptly to stakeholders.</li>
+          <li>Built dashboards and reports that communicated quality metrics to engineering and management.</li>
+          <li>Mentored interns and fostered a collaborative learning environment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS / EDUCATION / COMMUNITY -->
+  <section id="credentials">
+    <div class="wrap">
+      <h2>Credentials &amp; community</h2>
+      <p class="sub">&nbsp;</p>
+      <div class="two">
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>ISTQB Technical Test Analyst</li>
+            <li>ISTQB Foundation Level</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Education</h3>
+          <ul>
+            <li>BSc Computer Science, Maseno University (2019)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Community</h3>
+          <ul>
+            <li>Run in-person mentorship programs for primary and secondary school students.</li>
+            <li>Sponsor teenagers to attend Word of Life Kenya camps.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Languages</h3>
+          <ul>
+            <li>English (proficient)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p class="sub">I'm looking for a remote QA leadership or automation role. Reach out and let's talk.</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:kathinirachael96@gmail.com">kathinirachael96@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/rachael-kathini-9b3b0a116/">linkedin.com/in/rachael-kathini-9b3b0a116</a></li>
+        <li>GitHub: <a href="https://github.com/YOUR-USERNAME">github.com/YOUR-USERNAME</a></li>
+        <li>Location: Nairobi, Kenya (open to remote)</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Rachael Kathini. Built with HTML and CSS, hosted on GitHub Pages.</div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
